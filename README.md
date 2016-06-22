@@ -1,2 +1,2 @@
 # reactello
-A trello clone made using react
+A trello-like TODO list, made using react

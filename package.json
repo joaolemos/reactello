@@ -1,0 +1,32 @@
+{
+  "name": "reactello",
+  "version": "1.0.0",
+  "description": "A trello-like TODO list and kanban board, made using react",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "production": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaolemos/reactello.git"
+  },
+  "author": "Joao Lemos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaolemos/reactello/issues"
+  },
+  "homepage": "https://github.com/joaolemos/reactello#readme",
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "html-webpack-plugin": "^2.21.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

@@ -1,2 +1,2 @@
 # reactello
-A trello-like TODO list, made using react
+A trello-like TODO list and kanban board, made using react

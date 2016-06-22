@@ -1,12 +1,5 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Home = require('./containers/Home');
 
-var Hello = React.createClass({
-  render: function () {
-    return (
-      <div>Welcome to Reactello!</div>
-    )
-  }
-});
-
-ReactDOM.render(<Hello />, document.getElementById('app'));
+ReactDOM.render(<Home />, document.getElementById('app'));

@@ -5,9 +5,19 @@ function Dashboard() {
   var itemsData = [{id: 1, value: "This is an item"}, {id: 2, value: "This is another"}, {id: 3, value: "And another, woo"}];
 
   return (
-    <div>
-      <h2>Dashboard</h2>
-      <ItemsList data={itemsData} />
+    <div className="container">
+      <h1>Reactello</h1>
+      <div className="row">
+        <div className="col-sm-2">
+          <ItemsList title="Todo" data={itemsData} />
+        </div>
+        <div className="col-sm-2">
+          <ItemsList title="Doing" data={itemsData} />
+        </div>
+        <div className="col-sm-2">
+          <ItemsList title="Done" data={itemsData} />
+        </div>
+      </div>
     </div>
   )
 

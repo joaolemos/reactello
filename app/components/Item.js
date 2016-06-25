@@ -2,7 +2,7 @@ var React = require('react');
 
 function Item(props) {
   return (
-    <div>{props.value}</div>
+    <li className="list-group-item">{props.value}</li>
   )
 }
 

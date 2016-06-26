@@ -2,12 +2,12 @@ var React = require('react');
 var ItemsList = require('./ItemsList');
 
 var Dashboard = React.createClass({
-  lastId: 10,
+  lastId: 0,
   getInitialState: function() {
     return {
-      todo: [{id: 1, value: "We have to do this"}, {id: 2, value: "This is another thing todo"}, {id: 3, value: "And another, woo"}],
-      doing: [{id: 4, value: "We are doing this"}, {id: 5, value: "This is another"}, {id: 6, value: "And another, woo"}],
-      done: [{id: 7, value: "Done!"}, {id: 8, value: "This is another"}, {id: 9, value: "And another, woo"}],
+      todo: [],
+      doing: [],
+      done: [],
       newTodoItem: '',
       newDoingItem: '',
       newDoneItem: ''

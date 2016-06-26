@@ -1,5 +1,7 @@
 var React = require('react');
 var ItemsList = require('./ItemsList');
+var HTML5Backend = require('react-dnd-html5-backend');
+var DragDropContext = require('react-dnd').DragDropContext;
 
 var Dashboard = React.createClass({
   lastId: 0,
@@ -71,6 +73,17 @@ var Dashboard = React.createClass({
     });
   },
 
+  switch: function(oldList, newList, itemValue) {
+    var listUpdate = this.state[newList.toLowerCase()];
+    var listRemove = this.state[oldList.toLowerCase()];
+    var idx = listRemove.indexOf({ value: itemValue});
+    listRemove.splice(idx, 1);
+    listUpdate.push({
+      id: this.lastId++,
+      value: itemValue
+    })
+  },
+
   render: function() {
     return (
       <div className="container">
@@ -82,7 +95,8 @@ var Dashboard = React.createClass({
               data={this.state.todo}
               newItemValue={this.state.newTodoItem}
               onChangeItemValue={this.handleChangeTodoItem}
-              onAddItem={this.handleAddTodoItem} />
+              onAddItem={this.handleAddTodoItem}
+              switch={this.switch} />
           </div>
           <div className="col-sm-2">
             <ItemsList
@@ -90,7 +104,8 @@ var Dashboard = React.createClass({
               data={this.state.doing}
               newItemValue={this.state.newDoingItem}
               onChangeItemValue={this.handleChangeDoingItem}
-              onAddItem={this.handleAddDoingItem} />
+              onAddItem={this.handleAddDoingItem}
+              switch={this.switch} />
           </div>
           <div className="col-sm-2">
             <ItemsList
@@ -98,7 +113,8 @@ var Dashboard = React.createClass({
               data={this.state.done}
               newItemValue={this.state.newDoneItem}
               onChangeItemValue={this.handleChangeDoneItem}
-              onAddItem={this.handleAddDoneItem} />
+              onAddItem={this.handleAddDoneItem}
+              switch={this.switch} />
           </div>
         </div>
       </div>
@@ -106,4 +122,4 @@ var Dashboard = React.createClass({
   }
 });
 
-module.exports = Dashboard;
+module.exports = DragDropContext(HTML5Backend)(Dashboard);

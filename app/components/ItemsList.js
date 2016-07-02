@@ -42,19 +42,21 @@ function ItemsList(props) {
         </ul>
       </div>
       <div className="panel-footer">
-        <div className="input-group">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="New item..."
-            value={props.newItemValue}
-            onChange={props.onChangeItemValue} />
-          <span className="input-group-btn">
-            <button className="btn btn-default" type="button" onClick={props.onAddItem}>
-                <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            </button>
-          </span>
-        </div>
+        <form onSubmit={props.onAddItem}>
+          <div className="input-group">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="New item..."
+              value={props.newItemValue}
+              onChange={props.onChangeItemValue} />
+              <span className="input-group-btn">
+                <button className="btn btn-default" type="submit">
+                  <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </button>
+              </span>
+            </div>
+        </form>
       </div>
     </div>
   )

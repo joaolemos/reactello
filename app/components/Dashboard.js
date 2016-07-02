@@ -17,6 +17,7 @@ var Dashboard = React.createClass({
   },
 
   handleAddTodoItem: function(event) {
+    event.preventDefault();
     var todoList = this.state.todo;
     if(this.state.newTodoItem !== '') {
       todoList.push({

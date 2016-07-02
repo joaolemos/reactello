@@ -2,8 +2,9 @@
   This module contains action creators dealing with `appState.auth`
 */
 var C = require("../constants/statesActions"),
+	F = require("../constants/firebase")
 	firebase = require("firebase"),
-	fireRef = firebase.initializeApp(C.FIREBASE),
+	fireRef = firebase.initializeApp(F.FIREBASE),
 	authRef = fireRef.auth()
 
 module.exports = {

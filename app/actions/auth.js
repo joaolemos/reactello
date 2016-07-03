@@ -30,7 +30,7 @@ module.exports = {
 	attemptLogin: function() {
 		return function(dispatch,getState) {
 			dispatch({type:C.ATTEMPTING_LOGIN});
-			var provider = new fireRef.auth.GithubAuthProvider();
+			var provider = new firebase.auth.GithubAuthProvider();
 			authRef.signInWithPopup(provider).then(function(result) {
 				// no need to do anything here, startListeningToAuth have already made sure that we update on changes
 			}).catch(function (error) {
